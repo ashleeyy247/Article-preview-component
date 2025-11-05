@@ -1,0 +1,103 @@
+/* CSS Boilerplate */
+:root {
+    /* Colors from style-guide.md */
+    --clr-very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --clr-desaturated-dark-blue: hsl(214, 17%, 51%);
+    --clr-grayish-blue: hsl(212, 23%, 69%);
+    --clr-light-grayish-blue: hsl(210, 46%, 95%);
+
+    /* Fonts from style-guide.md */
+    --ff-main: 'Manrope', Arial, Helvetica, sans-serif;
+    --fw-regular: 500;
+    --fw-bold: 700; 
+}
+ 
+html,
+body {
+    height: 100%;
+    font-family: var(--ff-main);
+    background-color: var( --clr-light-grayish-blue); 
+    font-size: 13px;
+    font-weight: var(--fw-regular);
+    display :flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.4;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+.card {
+    background-color: white;
+    border-radius: 8px;
+    width: 320px;
+    margin-bottom: 8px;
+}
+.card-image{
+    height: 200px;      /* Set your desired height */
+    width: 100%;        /* Make image fill container width */
+    object-fit: cover;
+    object-position: top;
+}
+.image-container{
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+}
+.detail-container{
+    padding : 24px 32px
+}
+
+.detail-container > p:first-child{
+    font-size: 16px;
+    font-weight: var(--fw-bold);
+    color :var(--clr-very-dark-grayish-blue);
+    
+}
+.detail-container > p:nth-child(2){
+    color :var( --clr-desaturated-dark-blue);
+    font-weight: var(--fw-regular);
+}
+.profile-container{
+    display: flex;
+    align-items: center;
+    margin-top: 32px;
+    gap:16px
+} 
+.profile-description  > p{   
+    margin:0;
+    font-size: 12px;
+}
+ .profile-description  > p:first-child{  
+    font-weight: var(--fw-bold);
+    color :var(--clr-very-dark-grayish-blue);    
+} 
+.profile-description  > p:nth-child(2){  
+    font-weight: var(--fw-regular);
+    color :var( --clr-grayish-blue);  
+}
+.profile-image-container{   
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.share{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px 50px;
+    background-color: var(--clr-light-grayish-blue);
+    margin-left:auto
+}
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
