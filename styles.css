@@ -9,81 +9,104 @@
     /* Fonts from style-guide.md */
     --ff-main: 'Manrope', Arial, Helvetica, sans-serif;
     --fw-regular: 500;
-    --fw-bold: 700; 
+    --fw-bold: 700;
 }
- 
+
 html,
 body {
     height: 100%;
     font-family: var(--ff-main);
-    background-color: var( --clr-light-grayish-blue); 
+    background-color: var(--clr-light-grayish-blue);
     font-size: 13px;
     font-weight: var(--fw-regular);
-    display :flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    line-height: 1.4;
+    line-height: 1.5;
 }
+
 img {
     max-width: 100%;
     display: block;
 }
+
 .card {
     background-color: white;
     border-radius: 8px;
     width: 320px;
     margin-bottom: 8px;
 }
-.card-image{
-    height: 200px;      /* Set your desired height */
-    width: 100%;        /* Make image fill container width */
+
+.card-image {
+    height: 200px;
+    /* Set your desired height */
+    width: 100%;
     object-fit: cover;
     object-position: top;
 }
-.image-container{
+
+.image-container {
     overflow: hidden;
     border-radius: 8px 8px 0 0;
 }
-.detail-container{
-    padding : 24px 32px
+
+.detail-container {
+    padding: 16px 32px 0 32px;
 }
 
-.detail-container > p:first-child{
+.detail-container>p:first-child {
     font-size: 16px;
     font-weight: var(--fw-bold);
-    color :var(--clr-very-dark-grayish-blue);
-    
+    color: var(--clr-very-dark-grayish-blue);
+
 }
-.detail-container > p:nth-child(2){
-    color :var( --clr-desaturated-dark-blue);
+
+.detail-container>p:nth-child(2) {
+    color: var(--clr-desaturated-dark-blue);
     font-weight: var(--fw-regular);
 }
-.profile-container{
+
+.profile-container,
+.sharing {
     display: flex;
     align-items: center;
-    margin-top: 32px;
-    gap:16px
-} 
-.profile-description  > p{   
-    margin:0;
+    gap: 16px;
+    padding: 16px 32px;
+    border-radius: 0 0 8px 8px;
+}
+
+.sharing {
+    background-color: var(--clr-very-dark-grayish-blue);
+    color: var(--clr-grayish-blue);
+    letter-spacing: 3px;
+}
+
+.profile-description>p {
+    margin: 0;
     font-size: 12px;
 }
- .profile-description  > p:first-child{  
+
+.profile-description>p:first-child {
     font-weight: var(--fw-bold);
-    color :var(--clr-very-dark-grayish-blue);    
-} 
-.profile-description  > p:nth-child(2){  
-    font-weight: var(--fw-regular);
-    color :var( --clr-grayish-blue);  
+    color: var(--clr-very-dark-grayish-blue);
 }
-.profile-image-container{   
+
+.profile-description>p:nth-child(2) {
+    font-weight: var(--fw-regular);
+    color: var(--clr-grayish-blue);
+    line-height: 1.5;
+    font-size: 12px;
+}
+
+.profile-image-container {
     width: 40px;
     height: 40px;
     overflow: hidden;
     border-radius: 50%;
 }
-.share{ 
+
+.share {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -91,8 +114,26 @@ img {
     height: 30px;
     border-radius: 50px 50px;
     background-color: var(--clr-light-grayish-blue);
-    margin-left:auto
+    margin-left: auto
 }
+
+.sharing>.share {
+    background-color: var(--clr-desaturated-dark-blue);
+}
+
+.sharing .share img {
+    filter: brightness(0) invert(1);
+}
+
+.share>* {
+    cursor: pointer;
+}
+
+.social-icons {
+    display: flex;
+    gap: 16px
+}
+
 .attribution {
     font-size: 11px;
     text-align: center;
@@ -100,4 +141,48 @@ img {
 
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+.share-tooltip {
+    display: none !important;
+}
+
+@media (min-width: 660px) {
+    .card {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        min-width: 700px;
+    }
+
+    .image-container {
+        border-radius: 8px 0 0 8px;
+    }
+
+    .image-container>img {
+        width: 100%;
+        height: 100%;
+        object-position: left;
+    }
+
+    .share {
+        position: relative;
+    }
+
+    .sharing {
+        display: none !important;
+    }
+
+    .detail-container>p:first-child {
+        font-size: 18px;
+        padding-right: 42px;
+    }
+
+    .share-tooltip {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 16px 32px;
+        background-color: var(--clr-very-dark-grayish-blue);
+        color: var(--clr-grayish-blue);
+    }
 }
