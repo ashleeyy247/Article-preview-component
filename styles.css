@@ -125,7 +125,7 @@ img {
     filter: brightness(0) invert(1);
 }
 
-.share>* {
+.share, .share > * {
     cursor: pointer;
 }
 
@@ -144,10 +144,10 @@ img {
 }
 
 .share-tooltip {
-    display: none !important;
+    display: none;
 }
 
-@media (min-width: 660px) {
+@media (min-width: 750px) {
     .card {
         display: grid;
         grid-template-columns: 40% 60%;
@@ -158,7 +158,7 @@ img {
         border-radius: 8px 0 0 8px;
     }
 
-    .image-container>img {
+    .image-container > img {
         width: 100%;
         height: 100%;
         object-position: left;
@@ -178,11 +178,29 @@ img {
     }
 
     .share-tooltip {
+        top:-70px; 
+        position: absolute;
         display: flex;
         align-items: center;
-        gap: 16px;
+        gap: 18px;
         padding: 16px 32px;
         background-color: var(--clr-very-dark-grayish-blue);
         color: var(--clr-grayish-blue);
+        border-radius: 8px;
+        letter-spacing: 3px;
+        z-index: 10;
+        width: max-content;
     }
+
+    .share-tooltip::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 10px;
+        border-style: solid;
+        border-color: var(--clr-very-dark-grayish-blue) transparent transparent transparent;
+    }
+    
 }
